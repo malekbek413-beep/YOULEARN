@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101827" />
+  <meta name="description" content="YOULEARN — اتعلم كل يوم، خطوة أقرب لحلمك." />
+  <title>YOULEARN — اتعلم بطريقتك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="home"><span class="brand-mark">Y</span><span>YOU<span class="brand-light">LEARN</span><small>تعلم. تطور. انطلق.</small></span></a>
+      <div class="side-label">القائمة الرئيسية</div>
+      <nav class="nav">
+        <button class="nav-link active" data-page="home"><span>⌂</span> الرئيسية</button>
+        <button class="nav-link" data-page="courses"><span>▤</span> الكورسات</button>
+        <button class="nav-link" data-page="practice"><span>✦</span> اختبر نفسك</button>
+        <button class="nav-link" data-page="progress"><span>◷</span> تقدمي</button>
+      </nav>
+      <div class="side-label side-label-spaced">مساحتك</div>
+      <nav class="nav">
+        <button class="nav-link" data-page="profile"><span>◎</span> الملف الشخصي</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✧</div><b>كل خطوة بتفرق!</b><p>استمر في التعلم وحقق هدفك كل يوم.</p><button data-page="courses">اكتشف الكورسات ←</button></div>
+        <div class="sidebar-foot">© 2026 YOULEARN</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div class="breadcrumb">مساحة التعلم <span>/</span> <b id="pageName">الرئيسية</b></div>
+        <div class="top-actions"><span class="streak">🔥 <b id="streakTop">1</b> يوم</span><button class="avatar" data-page="profile" aria-label="الملف الشخصي">م</button></div>
+      </header>
+
+      <section class="page active" id="page-home">
+        <div class="welcome-row"><div><div class="eyebrow"><span class="live-dot"></span> مساحتك التعليمية</div><h1>أهلاً بيك في <span>YOULEARN</span> 👋</h1><p class="muted">كل يوم فرصة جديدة تتعلم فيها حاجة مختلفة.</p></div><div class="date-chip" id="todayDate"></div></div>
+        <section class="hero">
+          <div class="hero-copy"><span class="hero-tag">رحلتك تبدأ من هنا ✨</span><h2>مستقبلك مش صدفة،<br>مستقبلك <em>اختيارك.</em></h2><p>اتعلم مهارات جديدة، اختبر معلوماتك، وتابع تقدمك في مكان واحد.</p><button class="btn btn-white" data-page="courses">ابدأ التعلم <span>←</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="book-emoji">📚</div><div class="float-card float-one">✦ تعلم بذكاء</div><div class="float-card float-two">🚀 انطلق لقدام</div></div>
+        </section>
+        <div class="section-heading"><div><h2>ملخص رحلتك</h2><p>تابع إنجازاتك واستمر في التقدم</p></div><button class="text-btn" data-page="progress">عرض التفاصيل ←</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-icon purple">▤</div><div class="stat-number" id="statCourses">0</div><div class="stat-label">كورسات بدأت فيها</div><div class="stat-note">ابدأ أول كورس النهارده</div></article>
+          <article class="stat-card"><div class="stat-icon orange">◷</div><div class="stat-number" id="statMinutes">0 <small>دقيقة</small></div><div class="stat-label">وقت التعلم</div><div class="stat-note">كل دقيقة بتقربك لهدفك</div></article>
+          <article class="stat-card"><div class="stat-icon green">✓</div><div class="stat-number" id="statLessons">0</div><div class="stat-label">دروس مكتملة</div><div class="stat-note">إنجاز يستحق الاحتفال!</div></article>
+          <article class="stat-card"><div class="stat-icon blue">🔥</div><div class="stat-number"><span id="statStreak">1</span> <small>يوم</small></div><div class="stat-label">سلسلة الاستمرار</div><div class="stat-note">حافظ على عادتك اليومية</div></article>
+        </div>
+        <div class="content-grid">
+          <section class="panel courses-panel"><div class="panel-heading"><div><h3>كمل من حيث وصلت</h3><p>دروس مختارة ليك</p></div><button class="text-btn" data-page="courses">كل الكورسات</button></div><div id="continueList" class="continue-list"></div></section>
+          <section class="panel goal-panel"><div class="panel-heading"><div><h3>هدفك الأسبوعي</h3><p>خطوة صغيرة كل يوم</p></div><span class="goal-badge">🎯 هدفك</span></div><div class="goal-ring" id="goalRing"><div><b id="goalPercent">0%</b><small>من الهدف</small></div></div><p class="goal-caption"><b id="goalMinutes">0</b> من 120 دقيقة هذا الأسبوع</p><div class="goal-track"><span id="goalBar"></span></div><p class="goal-tip">💡 خصص 20 دقيقة يومياً وهتلاحظ الفرق.</p></section>
+        </div>
+        <section class="panel quote-panel"><span>❝</span><div><b>التعلم رحلة، مش سباق.</b><p>ابدأ بخطوة صغيرة النهارده، وخلي كل يوم أحسن من اللي قبله.</p></div><span class="quote-spark">✦</span></section>
+      </section>
+
+      <section class="page" id="page-courses">
+        <div class="page-title"><div><div class="eyebrow">وسع آفاقك</div><h1>اكتشف <span>الكورسات</span></h1><p class="muted">اختار المجال اللي بتحبه وابدأ رحلتك.</p></div></div>
+        <div class="filter-row"><div class="search-box"><span>⌕</span><input id="courseSearch" placeholder="دور على كورس..." /></div><div class="filters" id="filters"><button class="filter active" data-filter="all">الكل</button><button class="filter" data-filter="programming">برمجة</button><button class="filter" data-filter="design">تصميم</button><button class="filter" data-filter="language">لغات</button><button class="filter" data-filter="business">أعمال</button></div></div>
+        <div class="course-grid" id="courseGrid"></div>
+      </section>
+
+      <section class="page" id="page-practice">
+        <div class="page-title"><div><div class="eyebrow">قيّم مستواك</div><h1>اختبر <span>نفسك</span> ✦</h1><p class="muted">أسئلة سريعة تساعدك تثبت معلوماتك.</p></div></div>
+        <div class="quiz-wrap" id="quizWrap"><div class="quiz-top"><span class="quiz-label">اختبار معلومات عامة</span><span id="quizCount">السؤال 1 من 5</span></div><div class="quiz-progress"><span id="quizProgress"></span></div><div id="quizContent"></div></div>
+      </section>
+
+      <section class="page" id="page-progress">
+        <div class="page-title"><div><div class="eyebrow">إنجازاتك بالأرقام</div><h1>تقدمك <span>بيكبر</span> 📈</h1><p class="muted">كل إنجاز صغير هو نجاح كبير.</p></div></div>
+        <div class="stats-grid progress-stats"><article class="stat-card"><div class="stat-icon purple">▤</div><div class="stat-number" id="progressCourses">0</div><div class="stat-label">كورسات بدأت فيها</div></article><article class="stat-card"><div class="stat-icon green">✓</div><div class="stat-number" id="progressLessons">0</div><div class="stat-label">دروس مكتملة</div></article><article class="stat-card"><div class="stat-icon orange">◷</div><div class="stat-number" id="progressMinutes">0</div><div class="stat-label">دقائق تعلم</div></article></div>
+        <section class="panel progress-panel"><div class="panel-heading"><div><h3>الكورسات بتاعتك</h3><p>تابع نسبة إنجاز كل كورس</p></div></div><div id="progressCoursesList"></div></section>
+        <section class="panel achievements"><h3>إنجازاتك 🏆</h3><div class="achievement-grid" id="achievementGrid"></div></section>
+      </section>
+
+      <section class="page" id="page-profile">
+        <div class="page-title"><div><div class="eyebrow">مساحتك الخاصة</div><h1>الملف <span>الشخصي</span></h1><p class="muted">بياناتك التعليمية في مكان واحد.</p></div></div>
+        <div class="profile-layout"><section class="panel profile-card"><div class="profile-avatar">م</div><h2 id="profileName">متعلم جديد</h2><p>عضو في مجتمع YOULEARN</p><div class="profile-divider"></div><label for="nameInput">اسمك</label><input id="nameInput" class="field" placeholder="اكتب اسمك هنا"><label for="ageInput">عمرك</label><input id="ageInput" class="field" type="number" min="5" max="100" placeholder="العمر"><button class="btn btn-primary full-btn" id="saveProfile">حفظ التغييرات</button><p class="save-msg" id="saveMsg"></p></section><section class="panel profile-info"><h3>عن YOULEARN</h3><p>منصة تعليمية بتساعدك تتعلم مهارات جديدة وتنظم رحلتك التعليمية، خطوة بخطوة.</p><div class="info-line"><span>🎯</span><div><b>تعلم بهدف</b><small>حدد أهدافك واشتغل عليها.</small></div></div><div class="info-line"><span>📊</span><div><b>تابع تقدمك</b><small>شوف إنجازاتك بشكل واضح.</small></div></div><div class="info-line"><span>🌱</span><div><b>طور نفسك</b><small>استمر، حتى لو بخطوة صغيرة.</small></div></div></section></div>
+      </section>
+      <footer class="footer">صُنع بشغف من أجل رحلة تعلم أفضل <span>♥</span> YOULEARN © 2026</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
